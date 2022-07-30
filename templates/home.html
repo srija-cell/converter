@@ -10,23 +10,30 @@
 
 </head>
 <body>
-<p><h1>Django Uploading Images</h1></p>
+<p><h1 style="text-align: center;">Image to Text Converter</h1></p>
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" style="     
+  text-align:center;">
   {% csrf_token %}
    {{ form.as_p }}
   <button type="submit">Upload</button>
 </form>
-<h1>Image </h1>
+ 
+<h1 style="
+margin-left: 800px;">Text</h1>
+<h1 style="margin-top: -50px;">
+  Image </h1>
 {% if img_obj %}
   
   <img src="{{ img_obj.img.url}}" alt="connect" style="max-height:300px">
 
- <p style="  width: 300px;
+ <p style=
+ "width: 300px;
  padding: 60px;
  margin-top: -300px;
  margin-left: 800px;
- border: 5px solid gray;"> {{texts}}</p>
+ border: 5px solid rgb(228, 6, 6);">
+ {{texts}}</p>
 
 {% endif %}
 

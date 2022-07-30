@@ -34,22 +34,7 @@ def home_view(request):
           form= ImageForm()
           return render(request, 'home.html', {'form': form})
     
-
-#tesseract function call
-#def converter(request):
-#    from PIL import Image
-
-#    imgconv=Image.open(".\pics\ai-fellow-scholar-badge12x-100_84zyYRX.jpg")
-# #    print(imgconv)
-#    w,h=imgconv.size
-#    for i in range(w):
-#       for j in range(h):
-#           r,g,b=imgconv.getpixel((i,j))
-#           r=255-r
-#           g=255-g
-#           b=255-b
-#           imgconv.putpixel((i,j),(r,g,b))
-# #    print(imgconv) 
+    
 def converter(image):
     # Removing that '/' at the beginning of the URL
     url = image[1:]
@@ -62,11 +47,9 @@ def converter(image):
             g=255-g
             b=255-b
             imgconv.putpixel((i,j),(r,g,b))
-    #pytesseract.tesseract_cmd = (r"C:\Users\srija\projects\mychrome\Tesseract-OCR\tesseract.exe")
-    #text = pytesseract.image_to_string(imgconv)
+
     imgconv.save(url)
-    #imgconv.save(text)
-#    return render(request, 'home.html', {'imgconv': imgconv})  
+ 
 
 def texter(image):
     url= image[1:]
